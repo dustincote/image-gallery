@@ -19,6 +19,7 @@ router.put('/like/:id', (req, res) => {
 
 // GET Route
 router.get('/', (req, res) => {
+    console.log('GET from /gallery');
     pool.query('SELECT * FROM "images";').then(response=> res.send(response.rows)).catch(
         err=>{
             console.log('Error in GET:', err)
