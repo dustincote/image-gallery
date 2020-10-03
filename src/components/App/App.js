@@ -20,8 +20,15 @@ class App extends Component {
         images: response.data
         
       })
-      console.log(response.data)
     }).catch(err => console.log('Error in Axios GET to /gallery', err));
+  }
+
+  postLike = (picId,event) => {
+    event.stopPropagation()
+    Axios.put(`/gallery/like/${picId}`).then(response => {
+      this.getImages()
+      
+    }).catch(err => console.log('Error in PUT to /gallery/:id', err));
   }
 
 
@@ -34,7 +41,7 @@ class App extends Component {
           <h1 className="App-title">Gallery of my life</h1>
         </header>
         <br/>
-        <GalleryList images={this.state.images} />
+        <GalleryList images={this.state.images} postLike={this.postLike} />
       </div>
     );
   }
