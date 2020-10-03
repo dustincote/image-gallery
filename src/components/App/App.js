@@ -31,9 +31,7 @@ class App extends Component {
     }).catch(err => console.log('Error in PUT to /gallery/:id', err));
   }
 
-getSecret = ()=>{
-  Axios.get('https://demo.twilio.com/docs/classic.mp3').then(response => console.log(response))
-}
+
 
 
   render() {
@@ -42,7 +40,8 @@ getSecret = ()=>{
         <header className="App-header">
           <span className="App-title">InstaFacegrambook</span><br></br>
           <img className="logo" src="https://image.flaticon.com/icons/png/512/124/124010.png" alt="logo" /><br></br>
-          <span>"Might as well waste your time with us instead"</span>
+          <span>"Might as well waste your time with us instead"</span><br></br>
+          <span>make sure to 👍 and ❤️ our pictures</span>
         </header>
         <br/>
         <GalleryList images={this.state.images} postLike={this.postLike} />
