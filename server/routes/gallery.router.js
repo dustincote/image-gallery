@@ -4,6 +4,16 @@ const galleryItems = require('../modules/gallery.data');
 const pool = require('../modules/pool.js')
 
 // DO NOT MODIFY THIS FILE FOR BASE MODE
+// GET Route
+router.get('/', (req, res) => {
+    console.log('GET from /gallery');
+    pool.query('SELECT * FROM "images"ORDER BY "id" ASC;').then(response => res.send(response.rows)).catch(
+        err => {
+            console.log('Error in GET:', err)
+            res.sendStatus(400);
+        })
+
+}); // END GET Route
 
 //post to add image url to database
 router.post('/', (req, res) =>{
@@ -14,6 +24,18 @@ router.post('/', (req, res) =>{
         console.log('ERROR in POST to /gallery', err);
         res.sendStatus(400);
     })
+});
+
+
+
+//delete route
+router.delete('/:id', (req,res) => {
+    console.log('DELETE request to /gallery/:id');
+    const queryText=`DELETE  FROM "images" WHERE "id"=$1`
+    pool.query(queryText,[req.params.id]).then(response => res.sendStatus(200)).catch(err => {
+        console.log('ERROR in DELETE to /gallery/:id', err);
+        res.sendStatus(400);
+    }) 
 })
 
 
@@ -31,16 +53,7 @@ router.put('/like/:id', (req, res) => {
     )
     }); // END PUT Route
 
-// GET Route
-router.get('/', (req, res) => {
-    console.log('GET from /gallery');
-    pool.query('SELECT * FROM "images"ORDER BY "id" ASC;').then(response=> res.send(response.rows)).catch(
-        err=>{
-            console.log('Error in GET:', err)
-            res.sendStatus(400);
-        })
-    
-}); // END GET Route
+
 
 router.put('/heart/:id', (req, res) => {
     console.log(req.params.id);
