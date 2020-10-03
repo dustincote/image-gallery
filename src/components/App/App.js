@@ -41,7 +41,7 @@ class App extends Component {
           <span className="App-title">InstaFacegrambook</span><br></br>
           <img className="logo" src="https://image.flaticon.com/icons/png/512/124/124010.png" alt="logo" /><br></br>
           <span>"Might as well waste your time with us instead"</span><br></br>
-          <span>make sure to 👍 and ❤️ our pictures</span>
+          <span>make sure to <span aria-label="like" role="img">👍</span> and <span aria-label="heart" role="img">❤️</span> our pictures</span>
         </header>
         <br/>
         <GalleryList images={this.state.images} postLike={this.postLike} />
