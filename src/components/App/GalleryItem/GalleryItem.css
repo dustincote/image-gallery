@@ -30,6 +30,12 @@
 .heart{
     text-decoration: none;
     float: left;
+    background-color: transparent;
+    border: none;
+}
+
+.heart:hover {
+    border: 1px solid black;
 }
 .hearts {
     float: right;

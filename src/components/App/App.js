@@ -20,7 +20,7 @@ class App extends Component {
         images: response.data
         
       })
-      this.getMarkets()
+
     }).catch(err => console.log('Error in Axios GET to /gallery', err));
   }
 
@@ -32,26 +32,15 @@ class App extends Component {
     }).catch(err => console.log('Error in PUT to /gallery/:id', err));
   }
 
-  getMarkets = () =>{
-    Axios({
-      "method": "GET",
-      "url": "https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-summary",
-      "headers": {
-        "content-type": "application/octet-stream",
-        "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-        "x-rapidapi-key": "b4ee545aa5msh1038a3149365549p1d87bfjsn6d53ab30933b",
-        "useQueryString": true
-      }, "params": {
-        "region": "US"
-      }
-    })
-      .then((response) => {
-        console.log(response)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+  postHeart = (picId, event) => {
+    event.stopPropagation()
+    Axios.put(`/gallery/heart/${picId}`).then(response => {
+      this.getImages()
+
+    }).catch(err => console.log('Error in PUT to /gallery/:id', err));
   }
+
+ 
 
 
 
@@ -66,7 +55,7 @@ class App extends Component {
           <span>make sure to <span aria-label="like" role="img">👍</span> and <span aria-label="heart" role="img">❤️</span> our pictures</span>
         </header>
         <br/>
-        <GalleryList images={this.state.images} postLike={this.postLike} />
+        <GalleryList images={this.state.images} postLike={this.postLike} postHeart={this.postHeart}/>
 
       </div>
     );

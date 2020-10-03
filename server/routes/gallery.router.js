@@ -29,4 +29,16 @@ router.get('/', (req, res) => {
     
 }); // END GET Route
 
+router.put('/heart/:id', (req, res) => {
+    console.log(req.params.id);
+    const galleryId = req.params.id;
+    const queryText = `UPDATE "images" SET "hearts"= hearts+1 WHERE "id"=$1;`
+    pool.query(queryText, [galleryId]).then(response => res.sendStatus(200)).catch(
+        err => {
+            console.log('ERROR in PUT to /gallery/like/:id', err);
+            res.sendStatus(400);
+        }
+    )
+});
+
 module.exports = router;

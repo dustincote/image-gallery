@@ -1,8 +1,9 @@
 CREATE TABLE "images" (
-    id SERIAL PRIMARY KEY,
+    "id" SERIAL PRIMARY KEY,
     "path" varchar(300),
     "description" varchar(300),
     "likes" integer DEFAULT 0,
+    "hearts" integer DEFAULT 0
 );
 
 INSERT INTO "images" ("path", "description") 
