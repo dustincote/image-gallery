@@ -1,0 +1,12 @@
+.gallery-image{
+    width: 150px;
+    height: 150px;
+    margin-bottom: 15px;
+}
+
+.gallery-item {
+    display: inline-block;
+    margin: 4%;
+    border: 1px solid black;
+    background-color: rgb(255, 255, 255);
+}
