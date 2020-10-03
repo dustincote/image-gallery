@@ -1,11 +1,11 @@
 .App {
   text-align: center;
-  background-color: rgb(230, 230, 230);
+  background-color: white;
+
 }
 
 .App-header {
-  background-color: #222;
-  height: 70px;
+  background-color: rgb(0, 0, 1);
   padding: 20px;
   color: rgb(244, 244, 245);
   top: 0;
@@ -23,4 +23,11 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.logo{
+  border-top: 0;
+  width: 50px;
+  background-color: transparent;
+  margin-left: 10px;
 }

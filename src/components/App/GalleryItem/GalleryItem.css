@@ -8,7 +8,7 @@
     width: 250px;
     height: 300px;
     border: 1px solid black;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(32, 152, 244);
     margin-left:35% ;
     margin-bottom: 40px;
 }
@@ -26,4 +26,8 @@
 .likes {
     float: right;
     margin-top: none;
+}
+.heart{
+    text-decoration: none;
+    float: left;
 }
