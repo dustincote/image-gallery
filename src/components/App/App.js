@@ -71,6 +71,13 @@ class App extends Component {
       })
   }
 
+  handleDelete = (id,event) => {
+    Axios.delete(`/gallery/${id}`).then(response => {
+      this.getImages()
+      event.stopPropagation()
+    }).catch(err => console.log('ERROR in DELETE to /gallery/:id'));
+  }
+
 
 
  
@@ -89,7 +96,7 @@ class App extends Component {
         </header>
         <br/>
         <ImageForm newImage={this.state.newImage} handleChange={this.handleChange} addPic={this.addPic}/>
-        <GalleryList images={this.state.images} postLike={this.postLike} postHeart={this.postHeart}/>
+        <GalleryList images={this.state.images} postLike={this.postLike} postHeart={this.postHeart} handleDelete={this.handleDelete}/>
 
       </div>
     );
