@@ -6,6 +6,11 @@ class About extends Component {
         return (
             <div>
                 <h1>About Us</h1>
+                <p>Here is where we will tell you all about what a great company we are.<br></br> 
+                 We really are just a money hungry beast that wants
+                    to suck all of the money we can out of every user,<br></br> The more we can get you to use our app the more money we will make, thank you
+                    have a great day and don't forget to 👍 and ❤️ our pictures.
+                </p>
             </div>
         );
     }

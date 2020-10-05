@@ -110,14 +110,16 @@ class App extends Component {
             <span>"Might as well waste your time with us instead"</span><br></br>
             <span>make sure to <span aria-label="like" role="img">👍</span> and <span aria-label="heart" role="img">❤️</span> our pictures</span>
           </header>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-          </ul>
+          <span>
+            <ul className="navbar">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+            </ul>
+          </span>
           <br />
           <Switch>
             <Route path="/about" >
