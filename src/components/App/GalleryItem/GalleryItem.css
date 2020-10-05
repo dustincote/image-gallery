@@ -52,3 +52,7 @@
 .delete:hover {
     border: 1px solid black;
 }
+
+.img-desc {
+    min-height: 250px;
+}

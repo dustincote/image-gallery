@@ -26,7 +26,7 @@ class GalleryItem extends Component {
       
         return (
             <div onClick={this.shouldDisplay} key={this.props.img.id} className="gallery-item">
-                <span >{ this.state.display ? <img className="gallery-image" src={this.props.img.path} alt={this.props.img.description} /> : <p>{this.props.img.description}</p>}</span>
+                <span className="img-desc" >{ this.state.display ? <img className="gallery-image" src={this.props.img.path} alt={this.props.img.description} /> : <div className="img-desc"><br></br>{this.props.img.description}</div>}</span>
                 <Button className="like-button" onClick={(e) => this.props.postLike(this.props.img.id, e)}><span role="img" aria-label="like">👍 {this.props.img.likes}</span></Button>
                 {this.props.img.hearts === 1 ? <span aria-label="heart" role="img"><Button onClick={this.easterEgg} className="heart">❤️ {this.props.img.hearts}</Button></span> : <span aria-label="heart" role="img"><Button onClick={(e) => this.props.postHeart(this.props.img.id, e)} className="heart">❤️ {this.props.img.hearts}</Button></span>}
                 <Delete className="delete" onClick={(event) => this.props.handleDelete(this.props.img.id)}/>
