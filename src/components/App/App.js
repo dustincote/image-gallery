@@ -54,6 +54,7 @@ class App extends Component {
 
 //send a post request to the database to store a new image and then refresh the images
   addPic = (event) => {
+    event.preventDefault()
     event.stopPropagation()
     Axios.post('/gallery', this.state.newImage ).then(response => {
       this.setState({
