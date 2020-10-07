@@ -1,13 +1,13 @@
 # React Gallery
 
-Installation
-    1. Fork and Clone the repository
-    1. Run npm install in your terminal
-    1. Create a database called react_gallery 
-    1. using the provided SQL in the database.sql file create the table and insert the data into the table
-    1. Run npm run server in your terminal
-    1. Open a second terminal and run npm run client
-    1. Visit localhost:3000 and have fun with the page(be sure to try and give a picture 2 "hearts")
+## Installation
+    * Fork and Clone the repository
+    * Run npm install in your terminal
+    * Create a database called react_gallery 
+    * using the provided SQL in the database.sql file create the table and insert the data into the table
+    * Run npm run server in your terminal
+    * Open a second terminal and run npm run client
+    * Visit localhost:3000 and have fun with the page(be sure to try and give a picture 2 "hearts")
 
 ## Description
 
