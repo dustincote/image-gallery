@@ -54,7 +54,7 @@ router.put('/like/:id', (req, res) => {
     }); // END PUT Route
 
 
-
+//put route for hearts
 router.put('/heart/:id', (req, res) => {
     console.log(req.params.id);
     const galleryId = req.params.id;
