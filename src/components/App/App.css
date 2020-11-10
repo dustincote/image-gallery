@@ -32,3 +32,18 @@
   background-color: transparent;
   margin-left: 10px;
 }
+.navbar li {
+  list-style: none;
+  float: left;
+  padding: 10px;
+  top: 0;
+}
+
+li a {
+  text-decoration: none;
+  color: black;
+}
+
+li a:hover {
+  border: 1px solid black;
+}
